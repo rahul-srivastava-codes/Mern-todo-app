@@ -1,7 +1,7 @@
 function Login() {
   return (
     <div>
-      <div className="bg-zinc-300 w-[100vw] h-[91vh] flex flex-col items-center justify-center gap-3">
+      <div className="bg-green-300 w-[100vw] h-[91vh] flex flex-col items-center justify-center gap-3">
         <div className="text-5xl italic px-2 py-4">
           Login to the world of TODO
         </div>
@@ -10,7 +10,7 @@ function Login() {
             <div className="text-xl">Enter your email id</div>
             <input
               type="text"
-              className="bg-white text-black"
+              className="bg-white text-black rounded-lg"
               placeholder="Enter your email id"
             />
           </div>
@@ -19,7 +19,7 @@ function Login() {
             <input
               type="password"
               placeholder="Enter your password"
-              className="bg-white text-black"
+              className="bg-white text-black rounded-lg"
             />
           </div>
           <div className="flex flex-col gap-2 relative">
