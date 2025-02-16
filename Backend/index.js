@@ -2,15 +2,14 @@ const express = require("express");
 const user = require("./Schema");
 const mongoose = require("mongoose");
 const cors = require("cors");
+require("dotenv").config();
 
 const app = express();
 const port = 3000;
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect(
-  "mongodb+srv://rahulsrichunar:Wuvb1stMoHsaYlvz@signup.oran9.mongodb.net/signup"
-);
+mongoose.connect(process.env.API_URL);
 app.post("/signup", async (req, res) => {
   const { name, email, password } = req.body;
 
