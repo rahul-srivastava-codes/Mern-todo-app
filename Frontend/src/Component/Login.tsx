@@ -6,16 +6,19 @@ function Login() {
   const navigate = useNavigate();
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
-  async function login(e) {
+  async function login(e: any) {
     e.preventDefault();
     const user = await axios.post("http://localhost:3000/login", {
       email,
       password,
     });
-    if (user.status === 200) {
+    if (user.data === "Success") {
       setemail("");
       setpassword("");
       navigate("/todo");
+    } else {
+      navigate("/signup");
+      alert("Login failed");
     }
   }
   return (

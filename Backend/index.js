@@ -25,9 +25,12 @@ app.post("/login", async (req, res) => {
   const { email, password } = req.body;
   try {
     const user1 = await user.findOne({ email: email });
-    if (user1.email === email) {
-      if (user1.password === password) {
-        res.send("Login successful").status(200);
+    if (!user1) {
+      return res.status(404).send("User does not exist");
+    }
+    if (email === user1.email) {
+      if (password === user1.password) {
+        res.send("Success");
       } else {
         res.send("Incorrect password");
       }
