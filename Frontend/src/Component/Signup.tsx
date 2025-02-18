@@ -1,8 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 function Signup() {
+  const notify = () => toast("Wow so easy!");
   const navigate = useNavigate();
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
@@ -64,9 +66,13 @@ function Signup() {
             />
           </div>
           <div className="flex flex-col gap-2 relative">
-            <button className="px-2 py-1 bg-blue-600 hover:border-1 hover: border-white rounded-lg   absolute  hover:bg-red-500 hover:text-white">
+            <button
+              className="px-2 py-1 bg-blue-600 hover:border-1 hover: border-white rounded-lg   absolute  hover:bg-red-500 hover:text-white"
+              onClick={notify}
+            >
               Submit
             </button>
+            <ToastContainer />
           </div>
         </form>
       </div>
